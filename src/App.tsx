@@ -6,6 +6,7 @@ import { Status } from './components/Status';
 import { Heanding } from './components/Heanding';
 import { Oscar } from './components/Oscar';
 import { Button } from './components/Button';
+import { Input } from './components/Input';
 
 function App() {
   const personName = {
@@ -35,7 +36,12 @@ function App() {
       <Oscar>
         <Heanding> Oscar goes to Leonardo!</Heanding>
       </Oscar>
-      <Button handelClick={() => console.log('Button clicked!')} />
+      <Button
+        handelClick={(event, id) => {
+          console.log('Button clicked!', event, id);
+        }}
+      />
+      <Input value="" handelChange={(event) => console.log(event)} />
       <Heanding>Placeholder </Heanding>
       <PersonList names={nameList} />
     </div>

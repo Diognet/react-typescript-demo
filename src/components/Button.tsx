@@ -1,8 +1,11 @@
-import React from "react";
+import React from 'react';
 
-
-type ButtonProps = { handelClick: () => void };
+type ButtonProps = {
+  handelClick: (event: React.MouseEvent<HTMLButtonElement>, id: number) => void;
+};
 
 export const Button = (props: ButtonProps) => {
-  return <button onClick= {props.handelClick}> Click</button>;
+  return (
+    <button onClick={(event) => props.handelClick(event, 1)}> Click</button>
+  );
 };
