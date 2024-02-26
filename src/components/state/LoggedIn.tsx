@@ -4,17 +4,12 @@ export const LoggedIn = () => {
   const [isLoggedIn, setisLoggedIn] = useState(false);
 
   const hanleLogin = () => {
-    setisLoggedIn(true);
-  };
-
-  const hanleLogout = () => {
-    setisLoggedIn(false);
+    setisLoggedIn(isLoggedIn ? false : true);
   };
 
   return (
     <div>
-      <button onClick={hanleLogin}>Login</button>
-      <button onClick={hanleLogout}>Logout</button>
+      <button onClick={hanleLogin}>{isLoggedIn ? 'Logout' : 'Login'}</button>
       <div>User is {isLoggedIn ? 'logged in' : 'Logged out'}</div>
     </div>
   );
