@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const LoggedIn = () => {
-  const [isLoggedIn, setisLoggedIn] = useState(false);
+  const [isLoggedIn, setisLoggedIn] = useState<boolean>(false);
 
   const hanleLogin = () => {
     setisLoggedIn(isLoggedIn ? false : true);
