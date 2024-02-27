@@ -33,10 +33,10 @@ export const User = () => {
   return (
     <div>
       <button onClick={toggleLogin}>{isLoggedIn ? 'Logout' : 'Login'}</button>
-      {isLoggedIn ? (
+      {isLoggedIn && user ? (
         <div>
-          <div>User name is {user?.name}</div>
-          <div>User email is {user?.email}</div>
+          <div>User name is {user.name}</div>
+          <div>User email is {user.email}</div>
         </div>
       ) : (
         <div>Please log in to see user details.</div>
