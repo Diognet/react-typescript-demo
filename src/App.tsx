@@ -9,6 +9,9 @@ import { Button } from './components/Button';
 import { Input } from './components/Input';
 import { Container } from './components/Container';
 import { LoggedIn } from './components/state/LoggedIn';
+import { Box } from './components/state/context/Box';
+
+import { ThemeContextProvider } from './components/state/context/ThemeContext';
 
 function App() {
   const personName = {
@@ -48,6 +51,9 @@ function App() {
       <Heanding>Placeholder </Heanding>
       <PersonList names={nameList} />
       <LoggedIn />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </div>
   );
 }
