@@ -1,46 +1,26 @@
-import { useState } from 'react';
-
-type AutUser = {
-  name: string;
-  email: string;
-};
+import { useContext } from 'react';
+import { UserContext } from './UserContext';
 
 export const User = () => {
-  const [user, setUser] = useState<AutUser | null>(null);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const userContext = useContext(UserContext);
 
   const handleLogin = () => {
-    setUser({
-      name: 'Morgan',
-      email: 'morgan.up.dn@gmail.com',
+    userContext?.setUser({
+      name: 'Diognet',
+      email: 'diognet.up@gmail.com',
     });
-    setIsLoggedIn(true);
   };
 
-  const handleLogout = () => {
-    setUser(null);
-    setIsLoggedIn(false);
-  };
-
-  const toggleLogin = () => {
-    if (isLoggedIn) {
-      handleLogout();
-    } else {
-      handleLogin();
-    }
+  const handleLogaut = () => {
+    userContext?.setUser(null);
   };
 
   return (
     <div>
-      <button onClick={toggleLogin}>{isLoggedIn ? 'Logout' : 'Login'}</button>
-      {isLoggedIn && user ? (
-        <div>
-          <div>User name is {user.name}</div>
-          <div>User email is {user.email}</div>
-        </div>
-      ) : (
-        <div>Please log in to see user details.</div>
-      )}
+      <button onClick={handleLogin}>Login</button>
+      <button onClick={handleLogaut}>Logaut</button>
+      <div>User name is</div>
+      <div>User email is {userContext?.user?.email}</div>
     </div>
   );
 };
