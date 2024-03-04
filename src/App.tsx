@@ -9,10 +9,10 @@ import { Button } from './components/Button';
 import { Input } from './components/Input';
 import { Container } from './components/Container';
 import { LoggedIn } from './components/state/LoggedIn';
-import { Box } from './components/state/context/Box';
+import { Box } from './components/context/Box';
 import { UserContextProvider } from './components/state/UserContext';
 import { User } from './components/state/User';
-import { ThemeContextProvider } from './components/state/context/ThemeContext';
+import { ThemeContextProvider } from './components/context/ThemeContext';
 
 function App() {
   const personName = {
