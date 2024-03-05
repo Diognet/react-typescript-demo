@@ -7,7 +7,7 @@ import { Heanding } from './components/Heanding';
 import { Oscar } from './components/Oscar';
 import { Button } from './components/Button';
 import { Input } from './components/Input';
-import { Container } from './components/Container';
+import { Counter } from './components/class/Counter';
 import { LoggedIn } from './components/state/LoggedIn';
 import { Box } from './components/context/Box';
 import { UserContextProvider } from './components/state/UserContext';
@@ -39,7 +39,7 @@ function App() {
       <Greet name="Morgan" isLoggedIn={false} />
       <Person name={personName} />
       <Status status="loading" />
-      <Container styles={{ border: '1px solid black', padding: '1rem' }} />
+
       <Oscar>
         <Heanding> Oscar goes to Leonardo!</Heanding>
       </Oscar>
@@ -58,6 +58,7 @@ function App() {
       <UserContextProvider>
         <User />
       </UserContextProvider>
+      <Counter message="The count value is" />
     </div>
   );
 }
