@@ -1,10 +1,16 @@
-import {Login} from './Login'
+import React from 'react';
+import { Login } from './Login';
+import { ProfileProps } from './Profile';
 
-export const Private = ({ isLoggedIn, Component}) => {
+type PrivateProps = {
+  isLoggedIn: boolean;
+  component: React.ComponentType<ProfileProps>;
+};
+
+export const Private = ({ isLoggedIn, component: Component }: PrivateProps) => {
   if (isLoggedIn) {
-return <Component />
+    return <Component name="Morgan" />;
+  } else {
+    return <Login />;
   }
-  else {
-    return <Login />
-  }
-}
+};
