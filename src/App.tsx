@@ -15,6 +15,7 @@ import { User } from './components/state/User';
 import { ThemeContextProvider } from './components/context/ThemeContext';
 import { Profile } from './components/auth/Profile';
 import { Private } from './components/auth/Private';
+import { List } from './components/generics/List';
 
 function App() {
   const personName = {
@@ -41,7 +42,6 @@ function App() {
       <Greet name="Morgan" isLoggedIn={false} />
       <Person name={personName} />
       <Status status="loading" />
-
       <Oscar>
         <Heanding> Oscar goes to Leonardo!</Heanding>
       </Oscar>
@@ -62,6 +62,26 @@ function App() {
       </UserContextProvider>
       <Counter message="The count value is" />
       <Private isLoggedIn={true} component={Profile} />
+      {/*<List
+        items={['Batman', 'Superman', 'Spederman']}
+        onClick={(item) => console.log(item)}
+      />
+      <List items={[1, 2, 3]} onClick={(item) => console.log(item)} />*/}
+      <List
+        items={[
+          {
+            id: 1,
+            first: 'Mayk',
+            last: 'Brics',
+          },
+          {
+            id: 2,
+            first: 'Molle',
+            last: 'Flint',
+          },
+        ]}
+        onClick={(item) => console.log(item)}
+      />
     </div>
   );
 }
