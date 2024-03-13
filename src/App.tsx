@@ -87,7 +87,9 @@ function App() {
       />
       <RandomNumber value={10} isPositive />
       <Toast position="center" />
-      <CustomButton variant="primary"> Primary Button</CustomButton>
+      <CustomButton variant="primary" onClick={() => console.log('Clicked')}>
+        Primary Button
+      </CustomButton>
     </div>
   );
 }
