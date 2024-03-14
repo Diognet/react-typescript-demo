@@ -19,6 +19,7 @@ import { List } from './components/generics/List';
 import { RandomNumber } from './components/restriction/RandomNumber';
 import { Toast } from './components/templateliterals/toast';
 import { CustomButton } from './components/Html/Button';
+import { Text } from './components/polymorphic/Test';
 
 function App() {
   const personName = {
@@ -90,6 +91,11 @@ function App() {
       <CustomButton variant="primary" onClick={() => console.log('Clicked')}>
         Primary Button
       </CustomButton>
+      <Text as='h1' size="lg">Heading</Text>
+      <Text as='p'size="md">Paragraph</Text>
+      <Text as='label'size="sm" color="secondary">
+        Label
+      </Text>
     </div>
   );
 }
